@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'idea'
+    id 'com.github.sherter.google-java-format' version '0.9'
+}
+
+googleJavaFormat {
+    toolVersion = '1.9'
+}
+
+group 'com.rikglover.graphs'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform {
+        includeTags 'fast'
+        excludeTags 'slow'
+    }
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+
+    implementation 'com.google.guava:guava:27.1-jre'
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.7.0'
+    testImplementation 'org.assertj:assertj-core:3.18.1'
+
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+}
