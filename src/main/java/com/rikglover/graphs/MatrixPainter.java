@@ -24,10 +24,10 @@ public class MatrixPainter {
 
   private List<List<Integer>> getPossibleNextPoints(final int row, final int col) {
     return Stream.of(
-        List.of(row, col + 1),
-        List.of(row + 1, col),
-        List.of(row, col - 1),
-        List.of(row - 1, col))
+            List.of(row, col + 1),
+            List.of(row + 1, col),
+            List.of(row, col - 1),
+            List.of(row - 1, col))
         .filter(point -> point.get(0) >= 0 && point.get(0) < image.length)
         .filter(point -> point.get(1) >= 0 && point.get(1) < image[0].length)
         .collect(Collectors.toList());

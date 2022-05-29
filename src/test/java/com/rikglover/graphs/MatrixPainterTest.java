@@ -10,8 +10,8 @@ class MatrixPainterTest {
 
   @Test
   void whenMatrixPainterGetPaintedMatrixIsCalled_thePaintedMatrixIsReturned() {
-    final int[][] matrix = { { 0, 0, 1, 0 }, { 0, 0, 1, 0}, { 0, 0, 1, 0 }, { 0, 0, 1, 0 } };
-    final int[][] paintedMatrix = { { 1, 1, 1, 0 }, { 1, 1, 1, 0}, { 1, 1, 1, 0 }, { 1, 1, 1, 0 } };
+    final int[][] matrix = {{0, 0, 1, 0}, {0, 0, 1, 0}, {0, 0, 1, 0}, {0, 0, 1, 0}};
+    final int[][] paintedMatrix = {{1, 1, 1, 0}, {1, 1, 1, 0}, {1, 1, 1, 0}, {1, 1, 1, 0}};
 
     assertThat(MatrixPainter.of(matrix, 0, 0, 1).getPaintedMatrix()).isEqualTo(paintedMatrix);
   }

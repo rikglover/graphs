@@ -18,17 +18,17 @@ public class RouteDetector<T> {
     queue.offer(v1);
     visited.add(v1);
 
-    while(!queue.isEmpty()) {
+    while (!queue.isEmpty()) {
       final T current = queue.remove();
 
-      if(current.equals(v2)) {
+      if (current.equals(v2)) {
         return true;
       }
 
-      for(final Edge<T> edge : graph.getEdges(current)) {
+      for (final Edge<T> edge : graph.getEdges(current)) {
         final T neighbor = edge.getDestination();
 
-        if(!visited.contains(neighbor)) {
+        if (!visited.contains(neighbor)) {
           visited.add(neighbor);
           queue.offer(neighbor);
         }
